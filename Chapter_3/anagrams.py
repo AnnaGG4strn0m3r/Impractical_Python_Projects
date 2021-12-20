@@ -12,7 +12,7 @@ word_list = load_dictionary.load('2of4brif.txt')
 anagram_list = []
 
 # input a SINGLE word or SINGLE name below to find its anagram(s):
-name = 'Foster'
+name = 'stressed'
 print("Input name = {}".format(name))
 name = name.lower()
 print("Using name = {}".format(name))
