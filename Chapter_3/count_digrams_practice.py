@@ -8,9 +8,9 @@ from collections import defaultdict
 from itertools import permutations
 import load_dictionary
 
-word_list = load_dictionary.load('2of4brif.txt')
+word_list = load_dictionary.load('2of4brif.txt', 'r')
 
-name = 'Voldemort'  #(tmvoordle)
+name = 'Voldemort' #(tmvoordle)
 name = name.lower()
 
 # generate unique letter pairs from name
@@ -19,7 +19,7 @@ perms = {''.join(i) for i in permutations(name)}
 for perm in perms:
     for i in range(0, len(perm) - 1):
         digrams.add(perm[i] + perm[i + 1])
-print(*digrams, sep='\n')
+print(*sorted(digrams), sep='\n')
 print("\nNumber of digrams = {}\n".format(len(digrams)))
 
 # use regular expressions to find repeating digrams in a word
@@ -32,5 +32,5 @@ for word in word_list:
 
 print("digram frequency count:")
 count = 0
-for k in mapped:
+for k in sorted(mapped):
     print("{} {}".format(k, mapped[k]))
